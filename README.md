@@ -1,5 +1,6 @@
 # DAW-1-RGB-Mod
-Please do not skip the introduction. This guide will explain how to RGB mod your DAW-1 Sony Trinitron Chassis. This will use a variation of the RGB mux method with automatic switching for all DAW-1 Sony Trinitron Chassis found in the KV-13VM40, KV-13VM41, KV-13VM42, KV-13VM43, KV-20VM40, KV-20VS40, KV-20VM42, KV-20VS42.
+Please do not skip the introduction. This guide will explain how to RGB mod your DAW-1 Sony Trinitron Chassis. This will use a variation of the RGB mux method with automatic switching for all 13" DAW-1 Sony Trinitron Chassis found in the KV-13VM40, KV-13VM41, KV-13VM42, KV-13VM43.
+The 20" mod is theoretical and needs testing. KV-20VM40, KV-20VS40, KV-20VM42, KV-20VS42 all have a 680 ohm to ground resistor instead of a 560 ohm to ground resistor in the OSD circuit.
 ## Introduction
 ### Hardware Rundown
 For this guide I will be using the KV-13VM42, a 13" mono-composite trinitron that shares it's impressive trinitron tube with its more popular and well documented cousin, the KV-13M42 (lacking the V for VCR). Based on the Service manual (linked below) all areas of modification share a common motherboard throughout all DAW-1 Chassis listed. My KV-13VM42 is mono audio, and is physically missing some components from the motherboard. I believe the 20" models are stereo and will be able to retain stero sound natively. If mono audio is an issue on the 13", there are ways to modify the cable to have rca jacks to hook into an external audio unit and retain stero. There could also be an option to re-add the circuitry components to the motherboard, but I was content with mono. Such modifications can be explored in a future guide and are out of scope for this guide.
@@ -48,13 +49,15 @@ That being said, here are some key safety points. Be warned, it is not all encom
 - Push in the tabs on the tray and push the motherboard up. Go from one side and work your way to the other gently lifting the board. In my experience pushing in all the tabs and pulling the board out at the same time is impossible, you may need to flex the board just a smidge when going tab by tab.
 - You should now be able to work on the board itself.
 ### The OSD RGB Circuit
-The original OSD circuit consists of 
+The original OSD of the 13" model circuit consists of 
 
 __OSD RGB > 1KR > .7V drop Diode > 1.2KR > 560R to ground > 10uF Capacitor > Jungle RGB__
 
 The mod simplifies this circuit and utilizes the original Diode to preserve the original .7V signal strength of the RGB while not sacrificing OSD brightness to an unusable degree.
 
 __OSD RGB > 280R > .7V drop Diode > Bridged with Solder > 75R to ground > _.7V RGB Injection_ > 10uF capacitor > Jungle RGB__
+
+The 20" models have a 680R to ground instead of 560R to ground. Therefore this mod is theoretical for those. But I can't see why with the same chips that the simplified circuit wouldn't operate the same way.
 
 ### More than you want to know about Diodes
 The diodes being in place from the factory hugely benefits the results of this mod. If you aren't familiar with how diodes work, here is a rundown. Diodes allow current to flow in one direction on a circuit at the expense of dropping the voltage a fixed amount. This circuit utilized cermaic 0.7V drop diodes. The magical part about diodes is that because we have them on the circuit, it essentially prevents backflow of RGB injected signal into the resistors on the OSD line. This allows the 75R to ground to be a common termination point for both the injected RGB and the OSD RGB, meaning the Jungle IC recieves full power RGB signal and does not need to over amplify video signal. The reason the injected RGB is able to backflow into the 75R to ground is precisely becasuse the "to ground" allows current to flow through it. If this was an inline resistor, the injected RGB would ignore that resistor and flow directly to the capacitors and jungle IC without termination due to the inline diode.
