@@ -23,6 +23,7 @@ That being said, here are some key safety points. Be warned, it is not all encom
 - Silicon work mat (optional)
 - 280 ohm SMD resistor
 - 75 ohm SMD resistor
+- Mounting screws (I chose m4x16mm self tapping which were slightly too big imo but it worked out)
 - __ADVANCED USERS__ This mod can also work with 330 ohm and 85 ohm resistors _and more combos_ instead. Use [This Voltage Division Calculator](https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-voltage-divider) as a guide to find values of resistors that will work. The starting voltage is 3.4V and your goal is end up with around 0.7V.
 ### Service Manual
 [Here is the online link to the PDF service manual](https://elektrotanya.com/sony_kv-13vm40_41_42_43_kv-20vm40_42_kv-20vs40_chassis_daw-1.pdf/download.html#dl)
@@ -64,6 +65,22 @@ The mod taps into the blanking line (EDIT EXACT LOCATION INTO HERE) and sends 1.
 
 __Pin 16 5V > 8800R > 0.7v drop diode > (EDIT EXACT LOCATION INTO HERE) > Jungle IC__
 
-If automatic switching is not working on your circuit, you could have a bad scart cable or your console doesn't support blanking. You can test pin 16 voltage on a cable with a multimeter while the console is turned on to make sure its 5V.
+If automatic switching is not working on your circuit, you could have a bad scart cable or your console doesn't support blanking. You can test pin 16 voltage on a cable with a multimeter while the console is turned on to make sure its 5V. You will know the circuit works if you instantly get image from your console on plug in.
 
+### Wiring RGB, Blanking, Sync, Ground and Audio
+- You want to plan ahead and give youreself extra slack so that you can easily assemble the TV when you are putting it back together, feel free to skip ahead to picutres from the future to get an understanding.
+- Sync from composite seems to be working perfectly! Just simply tap into the signal and run the cable through the mother board hole to the connector.
+- Chassis ground for the connector can be tapped into right next to composite signal (the connector is grounded).
+- Mono Audio: Only tap in with Audio In Left from the connector leave Audio in Right unused.
+- Stereo: Tap in with both Audio in Left and Right into their respective jack signals.
+
+### Connector
+Follow the steps on this link (minus the termination to ground, we have the 75 ohm built into the motherboard) (insert link to tutorial for connector creation)
+Attach R, G, B, Blanking, Composite Sync, Audio L, and Chassis Ground wires to the connector. 
+
+### Chassis hole (for connector)
+This step is a pain to do. You can do a quick and dirty with some files and drills and just make a random sized opening and 3d print a scart cover plate, or you can take your time to craft a form fittd opening. I have a 3d printer but I wanted to try to do it right (if I messed up I would do a cover plate). Safe to say it turned out solid. I used a dremel tool and honestly would not recommend, it was dusty loud melty and smelly, would rather drill holes and connect them by filing.
+Key points:
+- The location I chose for the plug is very specific because it clears the internal lower tray and looks very nice and oem. Feel free to put the plug wherever you want but I think this is the best spot on a 13".
+- With the self tapping screws I linked you do not need to have a drill, (i didn't use one) but it would be better to make tiny pilot holes. But it's possible without a drill.
 
