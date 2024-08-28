@@ -58,7 +58,7 @@ __OSD RGB > 280R > .7V drop Diode > Bridged with Solder > 75R to ground > _.7V R
 
 ### More than you want to know about Diodes
 The diodes being in place from the factory hugely benefits the results of this mod. If you aren't familiar with how diodes work, here is a rundown. Diodes allow current to flow in one direction on a circuit at the expense of dropping the voltage a fixed amount. This circuit utilized cermaic 0.7V drop diodes. The magical part about diodes is that because we have them on the circuit, it essentially prevents backflow of RGB injected signal into the resistors on the OSD line. This allows the 75R to ground to be a common termination point for both the injected RGB and the OSD RGB, meaning the Jungle IC recieves full power RGB signal and does not need to over amplify video signal. The reason the injected RGB is able to backflow into the 75R to ground is precisely becasuse the "to ground" allows current to flow through it. If this was an inline resistor, the injected RGB would ignore that resistor and flow directly to the capacitors and jungle IC without termination due to the inline diode.
-### Why I think this mod method works better than others
+### Why this mod works so well
 If there was no diode, this would be a lot harder to balance because the injected RGB could intermix with existing OSD circuitry components. I believe this to be the problem with dim RGB signals and dim OSD signals on other mods. People are sacrificing voltage by balancing the entire circuit OSD+Injected RGB with using inline injected RGB resistors after a 75 ohm termination to ground in the connector. You have to remember that the OSD will now make a new circuit with this added inline resistor. However, sometimes there is no choice with the constraints of the circuit. So YMMV. It just so happens that this exact chassis allows very easy injection and modification. Also, my image is very consitent brightness and color calibration to the composite input, unlike a lot of mods online where they have to mess __A LOT__ with service menu settings to get it to look right again.
 ### Blanking signal
 The mod taps into the blanking line (EDIT EXACT LOCATION INTO HERE) and sends 1.5V from pin 16 on the scart connector. This original 5V from pin 16 voltages passes through this circuit to reach the Jungle IC at the desired value of 1.5V.
@@ -83,4 +83,26 @@ This step is a pain to do. You can do a quick and dirty with some files and dril
 Key points:
 - The location I chose for the plug is very specific because it clears the internal lower tray and looks very nice and oem. Feel free to put the plug wherever you want but I think this is the best spot on a 13".
 - With the self tapping screws I linked you do not need to have a drill, (i didn't use one) but it would be better to make tiny pilot holes. But it's possible without a drill.
+
+### Reassembly
+- If you are an __advanaced user__ you can skip to Color calibration and testing before reassembling and test the connection before the CRT is fully reassembled. It's always safer to turn on the CRT with everything assembled, so do this __AT YOUR OWN RISK__.
+- Reverse of Assembly, but __don't forget to read the VCR disclaimer__ above!
+
+## Color calibration and Testing
+### Service Menu Adjustment
+- Get some form of 240p test suite.
+- The OSD will not be able to adjust RGB video on this jungle chip design. This is not a huge problem at all. In order to adjust the video, use the service menu.
+- __While the TV is powered down, Press Display + 5 + Volume Up + Power in a quick succession to get into the service menu__
+- Make adjustments to the Red Green and Blue Bias based off of tutorials online.
+- Make adjustments to the geometry based off of tutorials online.
+- Some other service menu options will do nothing like sub contrast and sub brightness, this is normal.
+- When you are finished, press __Muting, then 0, then enter, then muting, then enter, then muting, then 0, then enter__
+- Im not completely clear on how the saving works on the service menu so the long string of actions above more or less guarantees that the settings will be written and saved even if the TV is unplugged. If saving isn't working, keep trying to save until it does.
+
+### OSD
+Osd doesn't work to adjust RGB input, but still works perfect with composite. This is actually a benefit because it allows to have both inputs be _sort of_ calibrated at the same time. You probably wont get it perfect because service menu changes affect it too, but it will be a lot closer than if OSD controlled RGB and composite signals at the same time.
+
+
+
+
 
