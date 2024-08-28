@@ -1,5 +1,5 @@
 # DAW-1-RGB-Mod
-Please do not skip the introduction. This guide will explain how to RGB mod your DAW-1 Sony Trinitron Chassis. This will use a variation of the RGB mux method with automatic switching for all 13" DAW-1 Sony Trinitron Chassis found in the KV-13VM40, KV-13VM41, KV-13VM42, KV-13VM43.
+This guide is in progress and is missing picutres/information. Please do not skip the introduction. This guide will explain how to RGB mod your DAW-1 Sony Trinitron Chassis. This will use a variation of the RGB mux method with automatic switching for all 13" DAW-1 Sony Trinitron Chassis found in the KV-13VM40, KV-13VM41, KV-13VM42, KV-13VM43.
 The 20" mod is theoretical and needs testing. KV-20VM40, KV-20VS40, KV-20VM42, KV-20VS42 all have a 680 ohm to ground resistor instead of a 560 ohm to ground resistor in the OSD circuit.
 ## Introduction
 ### Hardware Rundown
