@@ -102,7 +102,5 @@ Key points:
 ### OSD
 Osd doesn't work to adjust RGB input, but still works perfect with composite. This is actually a benefit because it allows to have both inputs be _sort of_ calibrated at the same time. You probably wont get it perfect because service menu changes affect it too, but it will be a lot closer than if OSD controlled RGB and composite signals at the same time.
 
-
-
-
-
+### Composite versus RGB
+Before RGB modding, I was contemplating if it was even worth it. The display on composite looked awesome on SNES. Smaller screen sizes like 13" makes composite look a lot better. However, adding the RGB __BLEW__ composite out of the water. I couldn't believe the difference! I can't look the same way at the composite signal anymore because I have been spoiled by RGB.
